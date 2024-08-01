@@ -4,7 +4,7 @@ const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://user-registration-server.vercel.app/api/users')
+    fetch('/api/users')
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
