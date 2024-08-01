@@ -7,7 +7,11 @@ const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://user-registration-test.vercel.app', // Allow only requests from this origin
+  methods: 'GET,POST', // Allow only these methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Allow only these headers
+}));
 
 const mongoURI = process.env.MONGO_URI;
 
