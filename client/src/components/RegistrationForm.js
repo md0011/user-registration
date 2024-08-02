@@ -12,8 +12,12 @@ const RegistrationForm = () => {
 
     const namePattern = /^[a-zA-Z\s]+$/;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const agePattern = /^\d+$/;
 
+    if(!name || !email || !age){
+      setAlert('All fields are required!');
+      setAlertType('error');
+      return;
+    }
     if (!namePattern.test(name)) {
       setAlert('Name should only contain text characters.');
       setAlertType('error');
@@ -21,11 +25,6 @@ const RegistrationForm = () => {
     }
     if (!emailPattern.test(email) || !email.endsWith('.com')) {
       setAlert('Email should be valid and end with .com');
-      setAlertType('error');
-      return;
-    }
-    if (!agePattern.test(age)) {
-      setAlert('Age should be an integer.');
       setAlertType('error');
       return;
     }
@@ -89,8 +88,9 @@ const RegistrationForm = () => {
         <div className="mb-4">
           <label className="block text-gray-700">Age</label>
           <input
-            type="text"
+            type="number"
             value={age}
+            min={1}
             onChange={(e) => setAge(e.target.value)}
             className="mt-1 p-2 w-full border rounded"
           />
