@@ -5,6 +5,7 @@ This is a simple user registration and admin dashboard application built with Re
 ## Features
 
 - User registration form with validation
+- Prevent duplicate email registration
 - Admin dashboard to view all registered users
 - Responsive design using Tailwind CSS
 
