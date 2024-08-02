@@ -47,8 +47,11 @@ const RegistrationForm = () => {
       } else {
         setAlert('Registration failed. Please try again.');
         setAlertType('error');
+        // console.log(await response.text());
+        setAlert(await response.text())
       }
     } catch (error) {
+      console.dir(error);
       setAlert('Error connecting to the server.');
       setAlertType('error');
     }

@@ -38,6 +38,9 @@ app.post("/api/register", async (req, res) => {
   if (!name || !email || !age) {
     return res.status(400).send("All fields are required");
   }
+  if (await User.findOne({email: email})){
+    return res.status(400).send("This email already registered");
+  }
   const user = new User({ name, email, age });
   await user.save();
   res.sendStatus(200);
