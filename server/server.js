@@ -7,10 +7,11 @@ const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'https://user-registration-test.vercel.app', // Allow only requests from this origin
-  methods: 'GET,POST', // Allow only these methods
-}));
+app.use(cors(
+  {
+    origin: 'https://user-registration-test.vercel.app'
+  }
+));
 
 const mongoURI = process.env.MONGO_URI;
 
@@ -48,9 +49,9 @@ app.get("/api/users", async (req, res) => {
 });
 
 //port
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 //listen port
 app.listen(port, () => {
-  console.log(`Server Running in ${process.env.NODE_MODE} Mode on port ${process.env.PORT}`);
+  console.log(`Server Running at http://localhost:${port}`);
 });

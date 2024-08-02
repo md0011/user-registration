@@ -4,7 +4,7 @@ const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('/api/users')
+    fetch('https://user-registration-zrg2.onrender.com/api/users')
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
