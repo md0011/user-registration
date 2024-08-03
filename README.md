@@ -19,7 +19,7 @@ This is a simple user registration and admin dashboard application built with Re
 
 - Frontend: React, Tailwind CSS
 - Backend: Node.js, Express.js, MongoDB
-- Deployment: Vercel (Frontend), Render (Backend)
+- Deployment: Vercel (Frontend & Backend)
 
 ## Environment Variables
 
