@@ -30,7 +30,7 @@ const RegistrationForm = () => {
     }
 
     try {
-      const response = await fetch('https://user-registration-zrg2.onrender.com/api/register', {
+      const response = await fetch('https://user-registration-server.vercel.app/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

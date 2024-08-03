@@ -4,7 +4,7 @@ const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://user-registration-zrg2.onrender.com/api/users')
+    fetch('https://user-registration-server.vercel.app/api/users')
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
