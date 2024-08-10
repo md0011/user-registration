@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors(
   {
-    origin: 'https://user-registration-test.vercel.app'
+    origin: ['https://user-registration-test.vercel.app', 'http://localhost:3000']
   }
 ));
 

@@ -5,9 +5,10 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://user-registration-server.vercel.app/api/users')
+    fetch(process.env.REACT_APP_URL + '/api/users')
       .then((response) => response.json())
-      .then((data) => setUsers(data), setLoading(false));
+      .then((data) => setUsers(data))
+      .then(setLoading(false))
   }, []);
 
   return (
@@ -15,7 +16,7 @@ const AdminDashboard = () => {
       <h2 className="text-2xl mb-4">Registered Users</h2>
       {loading ? (
         <div className="flex justify-center items-center">
-          <div className="loader">Loading...</div>
+          <div className="loader"></div>
         </div>
       ) : (
       <table className="min-w-full bg-white rounded-xl shadow-lg">

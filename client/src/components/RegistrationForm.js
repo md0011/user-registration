@@ -30,7 +30,7 @@ const RegistrationForm = () => {
     }
 
     try {
-      const response = await fetch('https://user-registration-server.vercel.app/api/register', {
+      const response = await fetch(process.env.REACT_APP_URL + '/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
