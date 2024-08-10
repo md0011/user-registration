@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_URL + '/api/users')
+    fetch('https://user-registration-server.vercel.app/api/users')
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .then(setLoading(false))
